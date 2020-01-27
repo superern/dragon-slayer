@@ -1,5 +1,6 @@
 <?php
 
+use App\Game;
 use Illuminate\Database\Seeder;
 
 class GamesTableSeeder extends Seeder
@@ -11,6 +12,8 @@ class GamesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Game::class, 1)->create([
+           'user_id' => 1
+        ]);
     }
 }
