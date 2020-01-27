@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Dragon Slayer</title>
+        <link rel="shortcut icon" href="/img/logo.png">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -62,38 +63,39 @@
                 margin-bottom: 30px;
             }
         </style>
+        <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height bg-gray-700">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
                     @endauth
                 </div>
             @endif
 
-            <div class="content">
+            <div class="flex flex-column items-center w-2/12">
                 <div class="title m-b-md">
-                    Laravel
+                    <img src="/img/logo.png" alt="dragon slayer">
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="text-2xl text-center w-full">
+                    <h1 class="my-2 text-white">Free to Play</h1>
+                    <div class="flex justify-content-around text-gray-400">
+                        @guest
+                            <a href="{{ route('login') }}">Login</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">Register</a>
+                            @endif
+                        @endguest
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Scripts -->
+        <script src="{{ mix('/js/app.js') }}" defer></script>
     </body>
 </html>
