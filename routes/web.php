@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-auth()->loginUsingId(1);
+//auth()->loginUsingId(1);
 // APIs
 Route::middleware('auth')->group(function() {
     Route::prefix('games')->group(function() {
