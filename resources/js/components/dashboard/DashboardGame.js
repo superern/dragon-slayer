@@ -10,8 +10,8 @@ class DashboardGame extends Component {
                         key={game.id}>
                         <div>
                             <a href={`/games/${game.id}`}>{game.name}</a> -
-                            <span className={`ml-1 ${ !!+game.status? 'text-red-500' : 'text-green-500'}`}>
-                                                    { !!+game.status? 'lost' : 'won' }
+                            <span className={`ml-1 ${ !+game.status? 'text-red-500' : 'text-green-500'}`}>
+                                                    { !+game.status? 'lost' : 'won' }
                             </span>
                         </div>
                     </li>

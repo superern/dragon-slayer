@@ -16,7 +16,7 @@ export default class CreateGame extends Component {
             comments: [],
             dragon: {
                 name: '',
-                health: 100,
+                health: 1,
                 attackSent: 0,
                 healReceived: 0,
                 blastCounter: 1,
@@ -47,20 +47,20 @@ export default class CreateGame extends Component {
         this.setState({dragon});
     }
     componentDidUpdate(prevProps, prevState) {
-        const {comments, dragon, you} = this.state;
+        const {comments, dragon, you, status} = this.state;
 
         if(dragon.health === 0 && prevState.dragon.health !== dragon.health) {
             comments.push('You WON!');
             this.setState({comments: comments, status: 1});
             alert('You WON!');
-            this.submit()
         }
         else if(you.health === 0 && prevState.you.health !== you.health) {
             comments.push('You died!');
             this.setState({comments: comments, status: 0});
             alert('You Died!');
-            this.submit()
+            this.submit();
         }
+        if(status ===1) this.submit();
     }
 
     handleQuitClick() {
