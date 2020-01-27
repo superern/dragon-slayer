@@ -17,6 +17,14 @@ class CreateGamesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->boolean('status')->default(0);
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
