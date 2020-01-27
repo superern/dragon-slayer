@@ -18,4 +18,8 @@ Homestead.json
 .phpunit.result.cache
 
 .idea
-/public/
+/public/css/
+/public/img/
+/public/js/
+/public/mix-manifest.json
+
