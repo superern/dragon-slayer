@@ -10,10 +10,10 @@ User
 Games
 	name
 	status
-	commentary
+	comment
 	timestamp
 
-Commentaries
+Comments
 	description
 	timestamp
 
