@@ -21,6 +21,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                <img src="/img/logo.png" alt="dragon slayer" width="20" class="mr-2">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Dragon Slayer') }}
                 </a>
