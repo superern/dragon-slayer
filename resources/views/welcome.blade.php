@@ -81,9 +81,8 @@
                             <a href="{{ url('/home') }}">Dashboard</a>
                         @endauth
                         @guest
-                            @if (Route::has('login'))
                                 <a href="{{ route('login') }}">Login</a>
-                            @elseif (Route::has('register'))
+                            @if (Route::has('register'))
                                 <a href="{{ route('register') }}">Register</a>
                             @endif
                         @endguest
