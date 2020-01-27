@@ -1,0 +1,19 @@
+dragon slayer
+
+User
+	name
+	email
+	password
+	timestamp
+	game
+
+Games
+	name
+	status
+	commentary
+	timestamp
+
+Commentaries
+	description
+	timestamp
+
