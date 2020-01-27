@@ -5,15 +5,15 @@ User
 	email
 	password
 	timestamp
-	game
 
 Games
 	name
 	status
-	comment
+	user_id
 	timestamp
 
 Comments
 	description
+	game_id
 	timestamp
 
