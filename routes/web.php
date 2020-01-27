@@ -18,3 +18,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+auth()->loginUsingId(1);
+// APIs
+Route::middleware('auth')->group(function() {
+    Route::prefix('games')->group(function() {
+        Route::get('new', 'GameController@create')->name('games.create');
+        Route::get('{game}', 'GameController@show')->name('games.show');
+    });
+
+    Route::prefix('/api')->group(function() {
+        Route::prefix('games')->group(function() {
+            Route::post('/', 'GameController@store')->name('api.games.save');
+            Route::get('/', 'GameController@listAll')->name('api.games');
+            Route::get('{game}', 'GameController@listGame')->name('api.games.show');
+        });
+   });
+});

@@ -67,13 +67,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height bg-gray-700">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @endauth
-                </div>
-            @endif
+
 
             <div class="flex flex-column items-center w-2/12">
                 <div class="title m-b-md">
@@ -83,10 +77,13 @@
                 <div class="text-2xl text-center w-full">
                     <h1 class="my-2 text-white">Free to Play</h1>
                     <div class="flex justify-content-around text-gray-400">
+                        @auth
+                            <a href="{{ url('/home') }}">Dashboard</a>
+                        @endauth
                         @guest
-                            <a href="{{ route('login') }}">Login</a>
-
-                            @if (Route::has('register'))
+                            @if (Route::has('login'))
+                                <a href="{{ route('login') }}">Login</a>
+                            @elseif (Route::has('register'))
                                 <a href="{{ route('register') }}">Register</a>
                             @endif
                         @endguest

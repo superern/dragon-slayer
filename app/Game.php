@@ -8,6 +8,7 @@ class Game extends Model
 {
     protected $fillable = ['name', 'status', 'user_id'];
 
+    protected $with = ['comments'];
     # Relationships
 
     public function user() {
